@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edição Aluno</title>
+  <link rel="stylesheet" href="editar-aluno.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="app-container">
+    <aside class="sidebar">
+      <div class="logo-section">
+        <img src="https://via.placeholder.com/40/3498db/FFFFFF?text=S" alt="Logo" class="logo">
+        <span class="logo-text">SURF PARA TODOS</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#">Dashboard</a></li>
+          <li class="active"><a href="#">Alunos</a></li>
+          <li><a href="#">Voluntários</a></li>
+          <li><a href="#">Configurações</a></li>
+          <li><a href="#">Relatórios</a></li>
+        </ul>
+      </nav>
+      <div class="logout"><a href="#">Sair</a></div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div>
+          <h3>Edição aluno</h3>
+        </div>
+        <div class="user-info">
+          <span>Gerente de cadastros</span>
+          <div class="user-avatar">
+            <img src="https://via.placeholder.com/40/2c3e50/FFFFFF?text=G" alt="Avatar">
+          </div>
+        </div>
+      </header>
+
+      <section class="edit-card">
+        <div class="edit-header">
+          <div class="status-tag">Ativo</div>
+          <div class="type-tag">Aluno</div>
+          <button class="confirm-button">Confirmar</button>
+        </div>
+
+        <div class="student-profile">
+          <img src="https://via.placeholder.com/100x100.png?text=A" class="profile-pic" alt="Foto do aluno">
+          <div class="info-box">
+            <p><strong>Nome Completo:</strong> Aline Fagundes</p>
+            <p><strong>Data Nascimento:</strong> 15/05/1998</p>
+            <p><strong>Telefone:</strong> (89) 456-48-15</p>
+            <p><strong>Email:</strong> email@teste.com</p>
+            <p><strong>Nome Responsável:</strong> -</p>
+          </div>
+          <div class="tags">
+            <span class="tag">Feminino</span>
+            <span class="tag">Ensino médio</span>
+            <span class="tag">Sim, auditiva</span>
+            <span class="tag">R$ 1 salário</span>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <!-- Adicione o atributo type="module" ao script -->
+  <script src="editar-aluno.js" type="module"></script>
+</body>
+</html>

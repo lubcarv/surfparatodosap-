@@ -1,0 +1,75 @@
+/* Additional styles specific to the classes page */
+
+/* Class badge styles */
+.class-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 20px;
+    color: white;
+    font-size: 12px;
+    font-weight: 500;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.class-badge-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.class-morning {
+    background-color: #4a6fa5;
+}
+
+.class-afternoon {
+    background-color: #a54a4a;
+}
+
+.class-evening {
+    background-color: #4a5fa5;
+}
+
+.class-count {
+    display: flex;
+    align-items: center;
+    color: #414a9f;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.class-count .material-icons {
+    margin-right: 5px;
+    font-size: 18px;
+}
+
+.total-classes {
+    color: #555;
+    font-size: 12px;
+    margin-top: 4px;
+    font-weight: normal;
+}
+
+/* Additional styles for the class indicator in the table */
+.class-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.teacher-badge {
+    background-color: rgba(65, 74, 159, 0.1);
+    color: #414a9f;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 10px;
+    margin-left: 8px;
+}
+
+/* Adjust the column widths for the classes table */
+.volunteers-table th:nth-child(3),
+.volunteers-table td:nth-child(3) {
+    min-width: 200px;
+}

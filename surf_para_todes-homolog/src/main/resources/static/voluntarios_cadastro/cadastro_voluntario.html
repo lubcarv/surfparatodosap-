@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Voluntário - SURF PARA TODOS</title>
+    <link rel="stylesheet" href="./cadastro_voluntario.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo-container">
+                <div class="logo-text">SURF PARA TODOS</div>
+            </div>
+
+            <nav class="nav-menu">
+                <ul>
+                    <li>
+                        <a href="../dashboard/dashboard.html"><i class="fas fa-th-large"></i> Dashboard</a>
+                    </li>
+
+                    <li class="accordion">
+                        <a href="#" class="accordion-toggle">
+                            <i class="fas fa-user-friends"></i> Alunos <i class="fas fa-chevron-down chevron-icon" style="margin-left:auto;"></i>
+                        </a>
+                        <ul class="sub-menu">
+                            <li><a href="../cadastro_aluno/cadastro_aluno.html">Cadastrar</a></li>
+                            <li><a href="../alunos_ativos/alunos_ativos.html">Ativos</a></li>
+                            <li><a href="../alunos_inativos/alunos_inativos.html">Inativos</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="accordion open">
+                        <a href="#" class="accordion-toggle">
+                            <i class="fas fa-hands-helping"></i> Voluntários <i class="fas fa-chevron-down chevron-icon" style="margin-left:auto;"></i>
+                        </a>
+                        <ul class="sub-menu">
+                            <li class="active"><a href="./cadastro_voluntario.html">Cadastrar</a></li>
+                            <li><a href="../voluntarios_ativos/voluntarios_ativos.html">Ativos</a></li>
+                            <li><a href="../voluntarios_inativos/voluntarios_inativos.html">Inativos</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="../turmas/turmas.html"><i class="fas fa-calendar-alt"></i> Turmas</a>
+                    </li>
+                    <li>
+                        <a href="../configuracoes/configuracoes.html"><i class="fas fa-cog"></i> Configurações</a>
+                    </li>
+                    <li>
+                        <a href="../relatorios/relatorios.html"><i class="fas fa-chart-bar"></i> Relatórios</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="logout-btn">
+                <a href="#"><i class="fas fa-sign-out-alt"></i> <span>Sair</span></a>
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <div class="header">
+                <div class="welcome-message">
+                    <h2>Bem-vindo, usuário</h2>
+                </div>
+                <div class="admin-info">
+                    <div class="admin-text">
+                        <span>Gerente de cadastros</span>
+                        <span class="time-info">4:45 pm 21 fev 2025</span>
+                    </div>
+                    <div class="admin-avatar">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Admin Avatar">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Content Area -->
+            <div class="content">
+                <div class="breadcrumb">
+                    <a href="../voluntarios_ativos/voluntarios_ativos.html"><i class="fas fa-arrow-left"></i> Voluntários Ativos</a>
+                </div>
+                
+                <!-- Registration Form -->
+                <div class="registration-container">
+                    <h3>Cadastrar Voluntário</h3>
+                    
+                    <form id="volunteer-form" class="registration-form">
+                        <div class="form-row">
+                            <div class="form-group full-width">
+                                <label for="name">Insira o nome completo*</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email*</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="birthdate">Data de nascimento</label>
+                                <div class="date-input-container">
+                                    <input type="date" id="birthdate" name="birthdate">
+                                    <i class="material-icons">calendar_today</i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Telefone*</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="income">Renda</label>
+                                <select id="income" name="income">
+                                    <option value="" selected disabled>Selecionar</option>
+                                    <option value="ate_1_salario">Até 1 salário mínimo</option>
+                                    <option value="1_a_3_salarios">1 a 3 salários mínimos</option>
+                                    <option value="3_a_5_salarios">3 a 5 salários mínimos</option>
+                                    <option value="acima_5_salarios">Acima de 5 salários mínimos</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="availability">Disponibilidade</label>
+                                <select id="availability" name="availability">
+                                    <option value="" selected disabled>Selecionar</option>
+                                    <option value="seg_manha">Segunda - Manhã</option>
+                                    <option value="seg_tarde">Segunda - Tarde</option>
+                                    <option value="qua_manha">Quarta - Manhã</option>
+                                    <option value="qua_tarde">Quarta - Tarde</option>
+                                    <option value="sex_manha">Sexta - Manhã</option>
+                                    <option value="sex_tarde">Sexta - Tarde</option>
+                                    <option value="sab_manha">Sábado - Manhã</option>
+                                    <option value="sab_tarde">Sábado - Tarde</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="how_knew">Como conheceu</label>
+                                <select id="how_knew" name="how_knew">
+                                    <option value="" selected disabled>Selecionar</option>
+                                    <option value="redes_sociais">Redes Sociais</option>
+                                    <option value="amigos">Amigos/Família</option>
+                                    <option value="evento">Evento</option>
+                                    <option value="internet">Internet</option>
+                                    <option value="outros">Outros</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="btn-continue">Continuar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="./cadastro_voluntario.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surf Para Todos - Dashboard</title>
+    <link rel="stylesheet" href="./dashboard_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="app-container">
+  <!-- Sidebar -->
+<div class="sidebar">
+    <div class="logo-container">
+        <div class="logo-text">SURF PARA TODOS</div>
+    </div>
+
+            <nav class="nav-menu">
+                <ul>
+                    <li class="active">
+                        <a href="dashboard.html"><i class="fas fa-th-large"></i> Dashboard</a>
+                    </li>
+
+                    <li class="accordion">
+                        <a href="#" class="accordion-toggle">
+                            <i class="fas fa-user-friends"></i> Alunos <i class="fas fa-chevron-down chevron-icon" style="margin-left:auto;"></i>
+                        </a>
+                        <ul class="sub-menu">
+                            <li><a href="../cadastro_aluno/cadastro_aluno.html">Cadastrar</a></li>
+                            <li><a href="../alunos_ativos.html">Ativos</a></li>
+                            <li><a href="../alunos_inativos.html">Inativos</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="accordion">
+                        <a href="#" class="accordion-toggle">
+                            <i class="fas fa-hands-helping"></i> Voluntários <i class="fas fa-chevron-down chevron-icon" style="margin-left:auto;"></i>
+                        </a>
+                        <ul class="sub-menu">
+                            <li><a href="../cadastro_voluntario.html">Cadastrar</a></li>
+                            <li><a href="../voluntarios_ativos.html">Ativos</a></li>
+                            <li><a href="../voluntarios_inativos.html">Inativos</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="../turmas/turmas.html"><i class="fas fa-calendar-alt"></i> Turmas</a>
+                    </li>
+            
+                    <li>
+                        <a href="../Relatorios/relatorios.html"><i class="fas fa-chart-bar"></i> Relatórios</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="logout">
+                <a href="../login/login.html"><i class="fas fa-sign-out-alt"></i> Sair</a>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <div class="header">
+                <h2>Bem-vindo, usuário</h2>
+                <div class="user-info">
+                    <div class="user-role">Gerente de cadastros</div>
+                    <div class="user-time">Atualizado há 2 min</div>
+                    <div class="user-avatar">
+                        <img src="https://via.placeholder.com/40/e74c3c/FFFFFF?text=U" alt="User Avatar">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard Summary -->
+            <div class="dashboard-summary">
+                <div class="summary-title">Resumo das atividades ONG</div>
+
+                <div class="stats-cards">
+                    <!-- Active Registrations -->
+                    <div class="stat-card">
+                        <div class="stat-content">
+                            <div class="stat-label">Cadastros ativos</div>
+                            <div class="stat-value">35</div>
+                            <div class="stat-trend positive">
+                                <i class="fas fa-arrow-up"></i> 12% desde o último mês
+                            </div>
+                        </div>
+                        <div class="stat-icon purple">
+                            <i class="fas fa-users"></i>
+                        </div>
+                    </div>
+
+                    <!-- Reports -->
+                    <div class="stat-card">
+                        <div class="stat-content">
+                            <div class="stat-label">Relatórios</div>
+                            <div class="stat-value">5</div>
+                            <div class="stat-info">Dados que segmentam nosso público</div>
+                        </div>
+                        <div class="stat-icon green">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                    </div>
+
+                    <!-- Special Needs Students -->
+                    <div class="stat-card">
+                        <div class="stat-content">
+                            <div class="stat-label">Alunos Deficientes</div>
+                            <div class="stat-value">14</div>
+                            <div class="stat-trend positive">
+                                <i class="fas fa-arrow-up"></i> 5% Desde o último mês
+                            </div>
+                        </div>
+                        <div class="stat-icon yellow">
+                            <i class="fas fa-wheelchair"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reports Section -->
+            <div class="reports-section">
+                <div class="section-header">
+                    <h3>Relatórios</h3>
+                </div>
+
+                <div class="chart-container">
+                    <!-- Report Navigation -->
+                    <div class="report-nav">
+                        <button class="report-nav-btn active">Frequência</button>
+                        <button class="report-nav-btn">Idade</button>
+                        <button class="report-nav-btn">Renda</button>
+                        <button class="report-nav-btn">Atividades</button>
+                        <button class="report-nav-btn">Engajamento</button>
+                    </div>
+
+                    <!-- Chart Area -->
+                    <div class="chart-area">
+                        <div class="chart-legend">
+                            <div class="legend-item">
+                                <span class="legend-dot students"></span>
+                                <span>Alunos</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-dot volunteers"></span>
+                                <span>Voluntários</span>
+                            </div>
+                        </div>
+                        <div class="season-labels">
+                            <div class="high-season">Alta temporada</div>
+                            <div class="low-season">Baixa temporada</div>
+                        </div>
+                        <canvas id="attendanceChart"></canvas>
+                        <div class="chart-months">
+                            <span>Janeiro</span>
+                            <span>Fevereiro</span>
+                            <span>Março</span>
+                            <span>Abril</span>
+                            <span>Maio</span>
+                            <span>Junho</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Students -->
+            <div class="recent-students-section">
+                <div class="section-header">
+                    <h3>Alunos recentes</h3>
+                </div>
+
+                <div class="recent-students-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Aluno</th>
+                                <th>Turno</th>
+                                <th>Status</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="student-info">
+                                    <img src="https://via.placeholder.com/40/3498db/FFFFFF?text=C" alt="Carol Costa">
+                                    <div class="student-name">Carol Costa</div>
+                                </td>
+                                <td>SEG - MANHÃ</td>
+                                <td><span class="status-badge active">Ativo</span></td>
+                                <td class="actions">
+                                    <button class="action-btn"><i class="fas fa-star"></i></button>
+                                    <button class="action-btn"><i class="fas fa-edit"></i></button>
+                                    <button class="action-btn"><i class="fas fa-ellipsis-v"></i></button>
+                                </td>
+                            </tr>
+                            <tr class="highlighted">
+                                <td class="student-info">
+                                    <img src="https://via.placeholder.com/40/2ecc71/FFFFFF?text=B" alt="Bruno Silva Pires">
+                                    <div class="student-name">Bruno Silva Pires</div>
+                                </td>
+                                <td>SEG - MANHÃ</td>
+                                <td><span class="status-badge active">Ativo</span></td>
+                                <td class="actions">
+                                    <button class="action-btn active"><i class="fas fa-star"></i></button>
+                                    <button class="action-btn"><i class="fas fa-edit"></i></button>
+                                    <button class="action-btn"><i class="fas fa-ellipsis-v"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="student-info">
+                                    <img src="https://via.placeholder.com/40/9b59b6/FFFFFF?text=Y" alt="Yasmin Cavalheiro Martins">
+                                    <div class="student-name">Yasmin Cavalheiro Martins</div>
+                                </td>
+                                <td>SEG - MANHÃ</td>
+                                <td><span class="status-badge active">Ativo</span></td>
+                                <td class="actions">
+                                    <button class="action-btn"><i class="fas fa-star"></i></button>
+                                    <button class="action-btn"><i class="fas fa-edit"></i></button>
+                                    <button class="action-btn"><i class="fas fa-ellipsis-v"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Month Info -->
+            <div class="month-info">
+                <div class="month-header">
+                    <div>
+                        <h4>Mês mais procurado</h4>
+                        <div class="month-name">Janeiro <span class="year">2019</span></div>
+                    </div>
+                </div>
+
+                <div class="stats-breakdown">
+                    <h4>Geral</h4>
+                    <div class="breakdown-items">
+                        <div class="breakdown-item">
+                            <div class="breakdown-icon purple">
+                                <i class="fas fa-hands-helping"></i>
+                            </div>
+                            <div class="breakdown-details">
+                                <div class="breakdown-label">Voluntários</div>
+                                <div class="breakdown-value">15</div>
+                            </div>
+                        </div>
+                        <div class="breakdown-item">
+                            <div class="breakdown-icon teal">
+                                <i class="fas fa-user-friends"></i>
+                            </div>
+                            <div class="breakdown-details">
+                                <div class="breakdown-label">Alunos</div>
+                                <div class="breakdown-value">25</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./dashboard_script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surf Para Todos - Turmas e Horários</title>
+    <link rel="stylesheet" href="./turmas_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo-container">
+                <div class="logo-text">SURF PARA TODOS</div>
+            </div>
+
+            <nav class="nav-menu">
+                <ul>
+                    <li>
+                        <a href="../Dashboard/dashboard.html"><i class="fas fa-th-large"></i> Dashboard</a>
+                    </li>
+
+                    <li class="accordion open">
+                        <a href="#" class="accordion-toggle">
+                            <i class="fas fa-user-friends"></i> Alunos <i class="fas fa-chevron-down chevron-icon" style="margin-left:auto;"></i>
+                        </a>
+                        <ul class="sub-menu">
+                            <li><a href="../cadastro_aluno/cadastro_aluno.html">Cadastrar</a></li>
+                            <li><a href="./alunos_ativos.html">Ativos</a></li>
+                            <li><a href="../alunos_inativos/alunos_inativos.html">Inativos</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="accordion open">
+                        <a href="#" class="accordion-toggle">
+                            <i class="fas fa-hands-helping"></i> Voluntários <i class="fas fa-chevron-down chevron-icon" style="margin-left:auto;"></i>
+                        </a>
+                        <ul class="sub-menu">
+                            <li><a href="../cadastro_voluntario/cadastro_voluntario.html">Cadastrar</a></li>
+                            <li><a href="../voluntarios_ativos/voluntarios_ativos.html">Ativos</a></li>
+                            <li><a href="../voluntarios_inativos/voluntarios_inativos.html">Inativos</a></li>
+                        </ul>
+                    </li>
+
+                    <li class ="active">
+                        <a href="../turmas/turmas.html"><i class="fas fa-calendar-alt"></i> Turmas</a>
+                    </li>
+                  
+                    <li>
+                        <a href="../relatorios/relatorios.html"><i class="fas fa-chart-bar"></i> Relatórios</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="logout">
+                <a href="../login/login.html"><i class="fas fa-sign-out-alt"></i> Sair</a>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <div class="header">
+                <div class="header-title">
+                    <h2>Turmas e Horários</h2>
+                </div>
+                <div class="header-actions">
+                    <div class="search-container">
+                        <input type="text" placeholder="Buscar turmas..." id="search-input">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <button class="add-class-btn" id="add-class-btn">
+                        <i class="fas fa-plus"></i> Nova Turma
+                    </button>
+                </div>
+            </div>
+
+            <!-- Classes Section -->
+            <div class="classes-section">
+                <div class="filter-controls">
+                    <div class="filter-group">
+                        <label>Filtrar por:</label>
+                        <select id="filter-day">
+                            <option value="">Dia da semana</option>
+                            <option value="segunda">Segunda</option>
+                            <option value="terca">Terça</option>
+                            <option value="quarta">Quarta</option>
+                            <option value="quinta">Quinta</option>
+                            <option value="sexta">Sexta</option>
+                            <option value="sabado">Sábado</option>
+                            <option value="domingo">Domingo</option>
+                        </select>
+                        <select id="filter-shift">
+                            <option value="">Turno</option>
+                            <option value="manha">Manhã</option>
+                            <option value="tarde">Tarde</option>
+                        </select>
+                        <select id="filter-status">
+                            <option value="">Status</option>
+                            <option value="ativa">Ativa</option>
+                            <option value="completa">Completa</option>
+                            <option value="inativa">Inativa</option>
+                        </select>
+                    </div>
+                    <div class="view-controls">
+                        <button class="view-btn active" data-view="grid">
+                            <i class="fas fa-th-large"></i>
+                        </button>
+                        <button class="view-btn" data-view="list">
+                            <i class="fas fa-list"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Classes Grid View (Default) -->
+                <div id="grid-view" class="classes-grid">
+                    <!-- Classes will be loaded dynamically via JS -->
+                </div>
+
+                <!-- Classes List View (Hidden by default) -->
+                <div id="list-view" class="classes-list" style="display: none;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Dia</th>
+                                <th>Turma</th>
+                                <th>Horário</th>
+                                <th>Instrutor</th>
+                                <th>Alunos</th>
+                                <th>Local</th>
+                                <th>Status</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="list-view-body">
+                            <!-- Table rows will be loaded dynamically via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Add/Edit Class -->
+    <div id="class-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Nova Turma</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="class-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="class-name">Nome da Turma*</label>
+                            <input type="text" id="class-name" required placeholder="Ex: Turma Iniciantes">
+                        </div>
+                        <div class="form-group">
+                            <label for="class-day">Dia da Semana*</label>
+                            <select id="class-day" required>
+                                <option value="" selected disabled>Selecione o dia</option>
+                                <option value="segunda">Segunda-feira</option>
+                                <option value="terca">Terça-feira</option>
+                                <option value="quarta">Quarta-feira</option>
+                                <option value="quinta">Quinta-feira</option>
+                                <option value="sexta">Sexta-feira</option>
+                                <option value="sabado">Sábado</option>
+                                <option value="domingo">Domingo</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="class-start-time">Horário Início*</label>
+                            <input type="time" id="class-start-time" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="class-end-time">Horário Término*</label>
+                            <input type="time" id="class-end-time" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="class-instructor">Instrutor*</label>
+                            <select id="class-instructor" required>
+                                <option value="" selected disabled>Selecione o instrutor</option>
+                                <option value="ricardo">Ricardo Almeida</option>
+                                <option value="marina">Marina Costa</option>
+                                <option value="joao">João Paulo</option>
+                                <option value="carlos">Carlos Mendes</option>
+                                <option value="luisa">Luísa Oliveira</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="class-capacity">Capacidade Máxima*</label>
+                            <input type="number" id="class-capacity" min="1" max="15" required value="8">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group full-width">
+                            <label for="class-location">Local da Aula*</label>
+                            <input type="text" id="class-location" required placeholder="Ex: Praia do Campeche, Ponto 2">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="class-status">Status*</label>
+                            <select id="class-status" required>
+                                <option value="ativa" selected>Ativa</option>
+                                <option value="inativa">Inativa</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="class-level">Nível*</label>
+                            <select id="class-level" required>
+                                <option value="iniciante" selected>Iniciante</option>
+                                <option value="intermediario">Intermediário</option>
+                                <option value="avancado">Avançado</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group full-width">
+                            <label for="class-notes">Observações</label>
+                            <textarea id="class-notes" rows="3" placeholder="Observações adicionais sobre a turma..."></textarea>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="cancel-class">Cancelar</button>
+                <button class="btn btn-primary" id="save-class">Salvar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Add Student to Class -->
+    <div id="add-student-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Adicionar Aluno à Turma</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="selected-class-info">
+                    <h4>Turma: <span id="selected-class-name">Turma Manhã</span></h4>
+                    <p><i class="far fa-calendar-alt"></i> <span id="selected-class-day">Segunda-feira</span>, <span id="selected-class-time">08:00 - 10:00</span></p>
+                    <p><i class="fas fa-user"></i> Instrutor: <span id="selected-class-instructor">Ricardo Almeida</span></p>
+                    <p><i class="fas fa-users"></i> Vagas disponíveis: <span id="selected-class-availability">2</span></p>
+                </div>
+                
+                <div class="student-search">
+                    <h4>Buscar Aluno</h4>
+                    <div class="search-field">
+                        <input type="text" id="student-search-input" placeholder="Nome, CPF ou ID do aluno...">
+                        <button class="btn btn-secondary" id="search-student-btn">
+                            <i class="fas fa-search"></i> Buscar
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="student-results">
+                    <h4>Resultados</h4>
+                    <div class="student-list">
+                        <!-- Student search results will appear here -->
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="cancel-add-student">Cancelar</button>
+                <button class="btn btn-primary" id="confirm-add-student" disabled>Adicionar Aluno</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: View Class Students -->
+    <div id="view-students-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Alunos da Turma: <span id="view-class-name">Turma Manhã</span></h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="class-details">
+                    <div class="detail-item">
+                        <i class="far fa-calendar-alt"></i> <span id="view-class-day">Segunda-feira</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="far fa-clock"></i> <span id="view-class-time">08:00 - 10:00</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-user"></i> <span id="view-class-instructor">Ricardo Almeida</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-map-marker-alt"></i> <span id="view-class-location">Praia do Campeche, Ponto 2</span>
+                    </div>
+                </div>
+                
+                <div class="student-table-container">
+                    <table class="student-table">
+                        <thead>
+                            <tr>
+                                <th>Aluno</th>
+                                <th>ID</th>
+                                <th>Deficiência</th>
+                                <th>Data de Início</th>
+                                <th>Status</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="student-table-body">
+                            <!-- Student data will be loaded dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="close-view-students">Fechar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./turmas_script.js"></script>
+</body>
+
+</html>

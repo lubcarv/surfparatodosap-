@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SURF PARA TODOS - Alunos Inativos</title>
+    <link rel="stylesheet" href="./inativos_style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo-container">
+                <div class="logo-text">SURF PARA TODOS</div>
+            </div>
+
+            <nav class="nav-menu">
+                <ul>
+                    <li>
+                        <a href="../Dashboard/dashboard.html"><i class="fas fa-th-large"></i> Dashboard</a>
+                    </li>
+
+                    <li class="accordion open">
+                        <a href="#" class="accordion-toggle">
+                            <i class="fas fa-user-friends"></i> Alunos <i class="fas fa-chevron-down chevron-icon" style="margin-left:auto;"></i>
+                        </a>
+                        <ul class="sub-menu">
+                            <li><a href="../cadastro_aluno/cadastro_aluno.html">Cadastrar</a></li>
+                            <li><a href="../alunos_ativos/alunos_ativos.html">Ativos</a></li>
+                            <li class="active"><a href="./alunos_inativos.html">Inativos</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="accordion open">
+                        <a href="#" class="accordion-toggle">
+                            <i class="fas fa-hands-helping"></i> Voluntários <i class="fas fa-chevron-down chevron-icon" style="margin-left:auto;"></i>
+                        </a>
+                        <ul class="sub-menu">
+                            <li><a href="../cadastro_voluntario/cadastro_voluntario.html">Cadastrar</a></li>
+                            <li><a href="../voluntarios_ativos/voluntarios_ativos.html">Ativos</a></li>
+                            <li><a href="../voluntarios_inativos/voluntarios_inativos.html">Inativos</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="../turmas/turmas.html"><i class="fas fa-calendar-alt"></i> Turmas</a>
+                    </li>
+                
+                    <li>
+                        <a href="../relatorios/relatorios.html"><i class="fas fa-chart-bar"></i> Relatórios</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="logout-btn">
+                <a href="#"><i class="fas fa-sign-out-alt"></i> <span>Sair</span></a>
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <div class="header">
+                <div class="welcome-message">
+                    <h2>Bem-vindo, usuário</h2>
+                </div>
+                <div class="admin-info">
+                    <div class="admin-text">
+                        <span>Gerente de cadastros</span>
+                        <span class="time-info">4:45 pm 21 fev 2025</span>
+                    </div>
+                    <div class="admin-avatar">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Admin Avatar">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Content Area -->
+            <div class="content">
+                <div class="content-header">
+                    <div class="title-section">
+                        <h3>Alunos Inativos</h3>
+                        <div class="badge">25 Cadastros</div>
+                    </div>
+                    <div class="action-section">
+                        <div class="search-box">
+                            <input type="text" placeholder="Procure pelo nome">
+                            <span class="material-icons"></span>
+                        </div>
+                        <a href="../alunos_ativos/alunos_ativos.html" class="view-active-btn">
+                            <span class="material-icons"></span> Ver Ativos
+                        </a>
+                        <button class="filter-btn">
+                            <span class="material-icons"></span> Filtros
+                        </button>
+                        <button class="export-btn">
+                            <span class="material-icons"></span> Exportar
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Inactive Students Table -->
+                <div class="table-container">
+                    <table class="students-table">
+                        <thead>
+                            <tr>
+                                <th>Aluno</th>
+                                <th>Dia e Turno</th>
+                                <th>Voluntário</th>
+                                <th>Endereço</th>
+                                <th>Deficiência</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="students-list">
+                            <!-- JavaScript will populate this -->
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Pagination -->
+                <div class="pagination">
+                    <span>1-25 de 25 itens</span>
+                    <div class="pagination-controls">
+                        <button class="page-prev" disabled>
+                            <span class="material-icons"><</span>
+                        </button>
+                        <button class="page-btn active">1</button>
+                        <button class="page-next" disabled>
+                            <span class="material-icons">></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="./inativos_script.js"></script>
+</body>
+
+</html>

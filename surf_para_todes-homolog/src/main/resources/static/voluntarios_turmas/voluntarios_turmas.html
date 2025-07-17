@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Voluntários - Turmas Vinculadas</title>
+    <link rel="stylesheet" href="./voluntarios_ativos.css">
+    <link rel="stylesheet" href="./voluntarios_turmas.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo-container">
+                <div class="logo">
+                    <span class="material-icons">volunteer_activism</span>
+                </div>
+                <div class="logo-text">SURF PARA TODOS</div>
+            </div>
+            
+            <nav class="nav-menu">
+                <div class="nav-item">
+                    <span class="material-icons">dashboard</span>
+                    <span>Dashboard</span>
+                </div>
+                <div class="nav-item">
+                    <span class="material-icons">school</span>
+                    <span>Turmas</span>
+                </div>
+                <div class="nav-item active">
+                    <span class="material-icons">people</span>
+                    <span>Voluntários</span>
+                </div>
+                <div class="nav-item">
+                    <span class="material-icons">groups</span>
+                    <span>Grupos</span>
+                </div>
+                <div class="nav-item">
+                    <span class="material-icons">settings</span>
+                    <span>Configurações</span>
+                </div>
+                <div class="nav-item">
+                    <span class="material-icons">assessment</span>
+                    <span>Relatórios</span>
+                </div>
+            </nav>
+            
+            <div class="logout-btn">
+                <span>Sair</span>
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <div class="header">
+                <div class="welcome-message">
+                    <h2>Bem-vindo, usuário</h2>
+                </div>
+                <div class="admin-info">
+                    <div class="admin-text">
+                        <span>Gerente de cadastros</span>
+                        <span class="time-info">4:45 pm 21 fev 2025</span>
+                    </div>
+                    <div class="admin-avatar">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Admin Avatar">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Content Area -->
+            <div class="content">
+                <div class="content-header">
+                    <div class="title-section">
+                        <h3>Turmas Vinculadas</h3>
+                        <div class="badge">10 Cadastros</div>
+                    </div>
+                    <div class="action-section">
+                        <div class="search-box">
+                            <input type="text" placeholder="Procure pelo nome">
+                            <span class="material-icons">search</span>
+                        </div>
+                        <a href="cadastro_voluntario.html" class="add-btn">
+                            <span>+</span> Cadastrar Voluntário
+                        </a>
+                        <button class="filter-btn">
+                            <span class="material-icons">filter_list</span> Filtros
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Classes Table -->
+                <div class="table-container">
+                    <table class="volunteers-table">
+                        <thead>
+                            <tr>
+                                <th>Voluntário</th>
+                                <th>Dia e Turno</th>
+                                <th>Turmas</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="volunteers-list">
+                            <!-- JavaScript will populate this -->
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Pagination -->
+                <div class="pagination">
+                    <span>1 de 1</span>
+                    <div class="pagination-controls">
+                        <button class="page-prev" disabled>
+                            <span class="material-icons">navigate_before</span>
+                        </button>
+                        <button class="page-next">
+                            <span class="material-icons">navigate_next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="./voluntarios_turmas.js"></script>
+</body>
+
+</html>

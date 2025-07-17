@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surf Para Todos - Alunos Inativos</title>
+    <link rel="stylesheet" href="./inativos_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo-container">
+                <div class="logo">
+                    <img src="https://via.placeholder.com/40/3498db/FFFFFF?text=S" alt="Logo Surf Para Todos">
+                </div>
+                <div class="logo-text">SURF PARA TODOS</div>
+            </div>
+
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="dashboard.html"><i class="fas fa-th-large"></i> Dashboard</a></li>
+                    <li class="active"><a href="index.html"><i class="fas fa-user-friends"></i> Alunos</a></li>
+                    <li><a href="#"><i class="fas fa-hands-helping"></i> Voluntários</a></li>
+                    <li><a href="turmas.html"><i class="fas fa-calendar-alt"></i> Turmas</a></li>
+                    <li><a href="#"><i class="fas fa-cog"></i> Configurações</a></li>
+                    <li><a href="#"><i class="fas fa-chart-bar"></i> Relatórios</a></li>
+                </ul>
+            </nav>
+
+            <div class="logout">
+                <a href="#"><i class="fas fa-sign-out-alt"></i> Sair</a>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <div class="header">
+                <h2>Bem-vindo, usuário</h2>
+                <div class="user-info">
+                    <div class="user-role">Gerente de cadastros</div>
+                    <div class="user-time">Atualizado há 2 min</div>
+                    <div class="user-avatar">
+                        <img src="https://via.placeholder.com/40/e74c3c/FFFFFF?text=U" alt="User Avatar">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content Area -->
+            <div class="content">
+                <!-- Title and Count -->
+                <div class="content-header">
+                    <div class="title-section">
+                        <h1>Alunos Inativos</h1>
+                        <span class="counter">25 Cadastros</span>
+                    </div>
+                    <div class="actions">
+                        <div class="search-container">
+                            <input type="text" placeholder="Procure pelo nome">
+                            <button class="search-button"><i class="fas fa-search"></i></button>
+                        </div>
+                        <button class="export-button">Exportar</button>
+                    </div>
+                </div>
+
+                <!-- Table -->
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Aluno</th>
+                                <th>Dia e Turno</th>
+                                <th>Voluntário</th>
+                                <th>Endereço</th>
+                                <th>Deficiência</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Student 1 -->
+                            <tr>
+                                <td class="student-info">
+                                    <img src="https://via.placeholder.com/40/3498db/FFFFFF?text=S" alt="Sabrina Castro">
+                                    <div>
+                                        <div class="student-name">Sabrina Castro</div>
+                                        <div class="student-id">CAS-1234567890</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="day-shift">SEG - MANHÃ</div>
+                                </td>
+                                <td>Rodrigo</td>
+                                <td>Campeche, Florianópolis, SC</td>
+                                <td>
+                                    <div class="disability">Deficiência visual (baixa visão, cegueira, uso de óculo corretivo)</div>
+                                </td>
+                                <td class="actions-cell">
+                                    <span class="status">Inativo</span>
+                                    <div class="action-buttons">
+                                        <button class="edit-button"><i class="fas fa-edit"></i></button>
+                                        <button class="delete-button"><i class="fas fa-trash"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- Student 2 -->
+                            <tr>
+                                <td class="student-info">
+                                    <img src="https://via.placeholder.com/40/9b59b6/FFFFFF?text=B" alt="Bianca Bento">
+                                    <div>
+                                        <div class="student-name">Bianca Bento</div>
+                                        <div class="student-id">BEN-1234567890</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="day-shift">SEX - TARDE</div>
+                                </td>
+                                <td>Juliana</td>
+                                <td>Palhoça, SC</td>
+                                <td>
+                                    <div class="disability">Deficiência física (adaptações motoras, dificuldades motora global, uso de prótese ou cadeiras de rodas)</div>
+                                </td>
+                                <td class="actions-cell">
+                                    <span class="status">Inativo</span>
+                                    <div class="action-buttons">
+                                        <button class="edit-button"><i class="fas fa-edit"></i></button>
+                                        <button class="delete-button"><i class="fas fa-trash"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- Student 3 -->
+                            <tr>
+                                <td class="student-info">
+                                    <img src="https://via.placeholder.com/40/e67e22/FFFFFF?text=R" alt="Renato Sardão">
+                                    <div>
+                                        <div class="student-name">Renato Sardão</div>
+                                        <div class="student-id">SAR-1234567890</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="day-shift">SÁB - MANHÃ</div>
+                                </td>
+                                <td>Rodrigo</td>
+                                <td>Rio Vermelho, Florianópolis, SC</td>
+                                <td>
+                                    <div class="disability">Deficiência visual (baixa visão, cegueira, uso de óculo corretivo)</div>
+                                </td>
+                                <td class="actions-cell">
+                                    <span class="status">Inativo</span>
+                                    <div class="action-buttons">
+                                        <button class="edit-button"><i class="fas fa-edit"></i></button>
+                                        <button class="delete-button"><i class="fas fa-trash"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- Student 4 -->
+                            <tr>
+                                <td class="student-info">
+                                    <img src="https://via.placeholder.com/40/1abc9c/FFFFFF?text=N" alt="Natália Armelau">
+                                    <div>
+                                        <div class="student-name">Natália Armelau</div>
+                                        <div class="student-id">ARM-1234567890</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="day-shift">QUI - MANHÃ</div>
+                                </td>
+                                <td>Camila</td>
+                                <td>Rio Tavares, Florianópolis, SC</td>
+                                <td>
+                                    <div class="disability">Deficiência visual (baixa visão, cegueira, uso de óculo corretivo)</div>
+                                </td>
+                                <td class="actions-cell">
+                                    <span class="status">Não</span>
+                                    <div class="action-buttons">
+                                        <button class="edit-button"><i class="fas fa-edit"></i></button>
+                                        <button class="delete-button"><i class="fas fa-trash"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- Student 5 -->
+                            <tr>
+                                <td class="student-info">
+                                    <img src="https://via.placeholder.com/40/f1c40f/FFFFFF?text=S" alt="Silvia Motta">
+                                    <div>
+                                        <div class="student-name">Silvia Motta</div>
+                                        <div class="student-id">MOT-1234567890</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="day-shift">SÁB - MANHÃ</div>
+                                </td>
+                                <td>Brenda</td>
+                                <td>SJM, José, SC</td>
+                                <td>
+                                    <div class="disability">Deficiência auditiva (Surdez parcial ou total, uso de aparelhos auditivos ou implantes cocleares)</div>
+                                </td>
+                                <td class="actions-cell">
+                                    <span class="status">Inativo</span>
+                                    <div class="action-buttons">
+                                        <button class="edit-button"><i class="fas fa-edit"></i></button>
+                                        <button class="delete-button"><i class="fas fa-trash"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- Student 6 -->
+                            <tr>
+                                <td class="student-info">
+                                    <img src="https://via.placeholder.com/40/27ae60/FFFFFF?text=M" alt="Milson Fonseca">
+                                    <div>
+                                        <div class="student-name">Milson Fonseca</div>
+                                        <div class="student-id">FON-1234567890</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="day-shift">SEG - MANHÃ</div>
+                                </td>
+                                <td>Rodrigo</td>
+                                <td>Campeche, Florianópolis, SC</td>
+                                <td>
+                                    <div class="disability">Deficiência visual (baixa visão, cegueira, uso de óculo corretivo)</div>
+                                </td>
+                                <td class="actions-cell">
+                                    <span class="status">Inativo</span>
+                                    <div class="action-buttons">
+                                        <button class="edit-button"><i class="fas fa-edit"></i></button>
+                                        <button class="delete-button"><i class="fas fa-trash"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- Student 7 -->
+                            <tr>
+                                <td class="student-info">
+                                    <img src="https://via.placeholder.com/40/8e44ad/FFFFFF?text=E" alt="Evelyn Conceição">
+                                    <div>
+                                        <div class="student-name">Evelyn Conceição</div>
+                                        <div class="student-id">CON-1234567890</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="day-shift">SEX - TARDE</div>
+                                </td>
+                                <td>Juliana</td>
+                                <td>Palhoça, SC</td>
+                                <td>
+                                    <div class="disability">Deficiência física (adaptações motoras, dificuldades motora global, uso de prótese ou cadeiras de rodas)</div>
+                                </td>
+                                <td class="actions-cell">
+                                    <span class="status">Inativo</span>
+                                    <div class="action-buttons">
+                                        <button class="edit-button"><i class="fas fa-edit"></i></button>
+                                        <button class="delete-button"><i class="fas fa-trash"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination">
+                    <div class="pagination-info">1-25 de itens</div>
+                    <div class="pagination-controls">
+                        <button class="page-button active">1</button>
+                        <button class="page-button">2</button>
+                        <button class="page-button next"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./inativos_script.js"></script>
+</body>
+
+</html>

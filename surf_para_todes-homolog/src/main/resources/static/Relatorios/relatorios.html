@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SURF PARA TODOS - Relatórios</title>
+    <link rel="stylesheet" href="./relatorios.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo-container">
+                <div class="logo-text">SURF PARA TODOS</div>
+            </div>
+
+            <nav class="nav-menu">
+                <ul>
+                    <li>
+                        <a href="../dashboard/dashboard.html"><i class="fas fa-th-large"></i> Dashboard</a>
+                    </li>
+
+                    <li class="accordion">
+                        <a href="#" class="accordion-toggle">
+                            <i class="fas fa-user-friends"></i> Alunos <i class="fas fa-chevron-down chevron-icon" style="margin-left:auto;"></i>
+                        </a>
+                        <ul class="sub-menu">
+                            <li><a href="../cadastro_aluno/cadastro_aluno.html">Cadastrar</a></li>
+                            <li><a href="../alunos_ativos/alunos_ativos.html">Ativos</a></li>
+                            <li><a href="../alunos_inativos/alunos_inativos.html">Inativos</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="accordion">
+                        <a href="#" class="accordion-toggle">
+                            <i class="fas fa-hands-helping"></i> Voluntários <i class="fas fa-chevron-down chevron-icon" style="margin-left:auto;"></i>
+                        </a>
+                        <ul class="sub-menu">
+                            <li><a href="../cadastro_voluntario/cadastro_voluntario.html">Cadastrar</a></li>
+                            <li><a href="../voluntarios_ativos/voluntarios_ativos.html">Ativos</a></li>
+                            <li><a href="../voluntarios_inativos/voluntarios_inativos.html">Inativos</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="../turmas/turmas.html"><i class="fas fa-calendar-alt"></i> Turmas</a>
+                    </li>
+                
+                    <li class="active">
+                        <a href="./relatorios.html"><i class="fas fa-chart-bar"></i> Relatórios</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="logout-btn">
+                <a href="../login/login.html"><i class="fas fa-sign-out-alt"></i> <span>Sair</span></a>
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <div class="header">
+                <div class="welcome-message">
+                    <h2>Bem-vindo, usuário</h2>
+                </div>
+                <div class="admin-info">
+                    <div class="admin-text">
+                        <span>Gerente de cadastros</span>
+                        <span class="time-info">4:45 pm 21 fev 2025</span>
+                    </div>
+                    <div class="admin-avatar">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Admin Avatar">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Content Area -->
+            <div class="content">
+                <div class="content-header">
+                    <div class="title-section">
+                        <h3>Relatórios</h3>
+                        <div class="badge">7 Relatórios Disponíveis</div>
+                    </div>
+                </div>
+                
+                <!-- Reports Container -->
+                <div class="reports-container">
+                    <!-- Student Demographics Report -->
+                    <div class="report-card">
+                        <div class="report-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="report-info">
+                            <h4>Demografia dos Alunos</h4>
+                            <p>Análise demográfica dos alunos por idade, gênero e localização</p>
+                            <div class="report-meta">
+                                <span><i class="far fa-calendar-alt"></i> Atualizado em: 21/07/2025</span>
+                                <span><i class="far fa-file-pdf"></i> PDF</span>
+                            </div>
+                        </div>
+                        <div class="report-actions">
+                            <button class="view-btn" data-report="student-demographics">
+                                <i class="fas fa-eye"></i> Visualizar
+                            </button>
+                            <button class="download-btn" data-report="student-demographics">
+                                <i class="fas fa-download"></i> Baixar
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Disability Types Report -->
+                    <div class="report-card">
+                        <div class="report-icon">
+                            <i class="fas fa-universal-access"></i>
+                        </div>
+                        <div class="report-info">
+                            <h4>Tipos de Deficiência</h4>
+                            <p>Distribuição de alunos por tipos de deficiência e necessidades específicas</p>
+                            <div class="report-meta">
+                                <span><i class="far fa-calendar-alt"></i> Atualizado em: 21/07/2025</span>
+                                <span><i class="far fa-file-pdf"></i> PDF</span>
+                            </div>
+                        </div>
+                        <div class="report-actions">
+                            <button class="view-btn" data-report="disability-types">
+                                <i class="fas fa-eye"></i> Visualizar
+                            </button>
+                            <button class="download-btn" data-report="disability-types">
+                                <i class="fas fa-download"></i> Baixar
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Class Occupancy Report -->
+                    <div class="report-card">
+                        <div class="report-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div class="report-info">
+                            <h4>Ocupação das Turmas</h4>
+                            <p>Análise da ocupação das turmas por dia, horário e capacidade</p>
+                            <div class="report-meta">
+                                <span><i class="far fa-calendar-alt"></i> Atualizado em: 20/07/2025</span>
+                                <span><i class="far fa-file-pdf"></i> PDF</span>
+                            </div>
+                        </div>
+                        <div class="report-actions">
+                            <button class="view-btn" data-report="class-occupancy">
+                                <i class="fas fa-eye"></i> Visualizar
+                            </button>
+                            <button class="download-btn" data-report="class-occupancy">
+                                <i class="fas fa-download"></i> Baixar
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Volunteer Activity Report -->
+                    <div class="report-card">
+                        <div class="report-icon">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <div class="report-info">
+                            <h4>Atividade dos Voluntários</h4>
+                            <p>Dados sobre a participação e horas dedicadas pelos voluntários</p>
+                            <div class="report-meta">
+                                <span><i class="far fa-calendar-alt"></i> Atualizado em: 19/07/2025</span>
+                                <span><i class="far fa-file-pdf"></i> PDF</span>
+                            </div>
+                        </div>
+                        <div class="report-actions">
+                            <button class="view-btn" data-report="volunteer-activity">
+                                <i class="fas fa-eye"></i> Visualizar
+                            </button>
+                            <button class="download-btn" data-report="volunteer-activity">
+                                <i class="fas fa-download"></i> Baixar
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Student Progress Report -->
+                    <div class="report-card">
+                        <div class="report-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="report-info">
+                            <h4>Progresso dos Alunos</h4>
+                            <p>Relatório de evolução e desenvolvimento dos alunos nas atividades</p>
+                            <div class="report-meta">
+                                <span><i class="far fa-calendar-alt"></i> Atualizado em: 15/07/2025</span>
+                                <span><i class="far fa-file-pdf"></i> PDF</span>
+                            </div>
+                        </div>
+                        <div class="report-actions">
+                            <button class="view-btn" data-report="student-progress">
+                                <i class="fas fa-eye"></i> Visualizar
+                            </button>
+                            <button class="download-btn" data-report="student-progress">
+                                <i class="fas fa-download"></i> Baixar
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Attendance Report -->
+                    <div class="report-card">
+                        <div class="report-icon">
+                            <i class="fas fa-clipboard-check"></i>
+                        </div>
+                        <div class="report-info">
+                            <h4>Relatório de Presença</h4>
+                            <p>Análise de frequência e ausências de alunos e voluntários</p>
+                            <div class="report-meta">
+                                <span><i class="far fa-calendar-alt"></i> Atualizado em: 14/07/2025</span>
+                                <span><i class="far fa-file-pdf"></i> PDF</span>
+                            </div>
+                        </div>
+                        <div class="report-actions">
+                            <button class="view-btn" data-report="attendance">
+                                <i class="fas fa-eye"></i> Visualizar
+                            </button>
+                            <button class="download-btn" data-report="attendance">
+                                <i class="fas fa-download"></i> Baixar
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Annual Activity Report -->
+                    <div class="report-card">
+                        <div class="report-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="report-info">
+                            <h4>Relatório Anual de Atividades</h4>
+                            <p>Resumo completo das atividades, eventos e resultados do ano</p>
+                            <div class="report-meta">
+                                <span><i class="far fa-calendar-alt"></i> Atualizado em: 10/07/2025</span>
+                                <span><i class="far fa-file-pdf"></i> PDF</span>
+                            </div>
+                        </div>
+                        <div class="report-actions">
+                            <button class="view-btn" data-report="annual-activity">
+                                <i class="fas fa-eye"></i> Visualizar
+                            </button>
+                            <button class="download-btn" data-report="annual-activity">
+                                <i class="fas fa-download"></i> Baixar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Report Generator Section -->
+                <div class="report-generator">
+                    <h3>Gerar Relatório Personalizado</h3>
+                    <div class="generator-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="report-type">Tipo de Relatório</label>
+                                <select id="report-type" class="form-control">
+                                    <option value="" disabled selected>Selecione o tipo de relatório</option>
+                                    <option value="students">Alunos</option>
+                                    <option value="volunteers">Voluntários</option>
+                                    <option value="classes">Turmas</option>
+                                    <option value="attendance">Presença</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="date-range">Período</label>
+                                <select id="date-range" class="form-control">
+                                    <option value="" disabled selected>Selecione o período</option>
+                                    <option value="last-month">Último mês</option>
+                                    <option value="last-quarter">Último trimestre</option>
+                                    <option value="last-semester">Último semestre</option>
+                                    <option value="last-year">Último ano</option>
+                                    <option value="custom">Personalizado</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row custom-date-range" style="display: none;">
+                            <div class="form-group">
+                                <label for="start-date">Data Inicial</label>
+                                <input type="date" id="start-date" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="end-date">Data Final</label>
+                                <input type="date" id="end-date" class="form-control">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="report-format">Formato</label>
+                                <select id="report-format" class="form-control">
+                                    <option value="pdf">PDF</option>
+                                    <option value="excel">Excel</option>
+                                    <option value="csv">CSV</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <button id="generate-report" class="btn btn-primary">
+                                    <i class="fas fa-file-export"></i> Gerar Relatório
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- PDF Viewer Modal -->
+    <div id="pdf-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title">Visualização do Relatório</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div id="pdf-container">
+                    <!-- PDF will be embedded here -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="download-report-btn" class="btn btn-primary">
+                    <i class="fas fa-download"></i> Baixar PDF
+                </button>
+                <button class="btn btn-secondary close-btn">Fechar</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="./relatorios.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/login.css" />
+  <!-- Modifique a linha do script para: -->
+  <script src="../javascript/login.js" type="module" defer></script>
+  <style>
+    /* Estilo básico para a mensagem */
+    #message {
+      margin-top: 10px;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="left-panel">
+    <h1 class="logo">
+      <img src="../imagem/shaka_preto.jpg" alt="Ícone de mão" />
+      BEM-VINDO!
+    </h1>
+    <p>Faça login para continuar</p>
+
+    <form id="loginForm">
+      <div class="input-field email">
+        <input type="email" name="email" placeholder="Digite seu e-mail" required />
+      </div>
+
+      <div class="input-field password">
+        <input type="password" name="password" placeholder="Senha" required />
+      </div>
+
+      <a href="#" class="forgot">Esqueci a senha</a>
+
+      <button type="submit">LOGIN</button>
+
+      <div id="message"></div>
+    </form>
+
+    <p class="register">
+      Não possui conta? <a href="#">Registre-se</a>
+    </p>
+  </div>
+
+  <div class="right-panel">
+    <img src="../imagem/login1.jpg" alt="Imagem de fundo" />
+  </div>
+</div>
+</body>
+</html>
