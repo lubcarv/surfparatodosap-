@@ -1,14 +1,16 @@
-# ---------- Stage 1: build ----------
-FROM maven:3.9-eclipse-temurin-21 AS build
-WORKDIR /build
-COPY pom.xml .
-COPY src ./src
-RUN mvn -B package -DskipTests   # gera target/*.jar
+FROM ubuntu:latest AS build
 
-# ---------- Stage 2: runtime ----------
-FROM eclipse-temurin:21-jre
-WORKDIR /app
-COPY --from=build /build/target/surfparatodes-0.0.1-SNAPSHOT.jar app.jar
+RUN apt-get update
+RUN apt-get install openjdk-21-jdk -y
+COPY . .
 
-# espaço entre a instrução e os argumentos!
-ENTRYPOINT ["java", "-jar", "app.jar"]
+RUN apt-get install maven -y
+RUN mvn clean install
+
+FROM openjdk:21-jdk-slim
+
+EXPOSE 8080
+
+COPY --from=build /target/surfparatodes-0.0.1-SNAPSHOT.jar app.jar
+
+ENTRYPOINT["java","-jar","app.jar"]
